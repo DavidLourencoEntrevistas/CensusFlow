@@ -7,7 +7,7 @@
 
 import Foundation
 
-class USADataAPI {
+class USADataAPI<T: Decodable> : USADataProtocol {
     
     private var urlString : String
     private var urlSession : URLSession
@@ -18,7 +18,7 @@ class USADataAPI {
     }
     
     // Function to fetch USA nation population data
-    func fetchNationPopulationData() async throws -> [Nation] {
+    func fetchNationPopulationData() async throws -> T {
         guard let url = URL(string: urlString) else{
             throw Errors.invalidUrl
         }
@@ -34,7 +34,7 @@ class USADataAPI {
                 throw Errors.serverError(statusCode: httpResponse.statusCode)
             }
             
-            let decodedResponse = try JSONDecoder().decode([Nation].self, from: data)
+            let decodedResponse = try JSONDecoder().decode(T.self, from: data)
             
             return decodedResponse
             

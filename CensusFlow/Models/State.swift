@@ -25,5 +25,13 @@ struct State : Decodable {
         case slugState = "Slug State"
     }
     
+    init(idState: String, state: String, idYear: Int, year: String, population: Int, slugState: String) {
+        self.idState = idState
+        self.state = state
+        self.idYear = idYear
+        self.year = year
+        self.population = population
+        self.slugState = slugState
+    }
     
 }
