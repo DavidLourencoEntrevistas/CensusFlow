@@ -9,9 +9,9 @@ import SwiftUI
 
 struct Tabs: View {
     
-    @StateObject var nationVM : NationViewModel = NationViewModel(USADataAPI: USADataAPI<[Nation]>(urlString: NationConstants.nationURL))
+    @StateObject var nationVM : NationViewModel = NationViewModel(USADataAPI: USADataAPI<NationData>(urlString: NationConstants.nationURL))
     
-    @StateObject var statesVM : StatesViewModel = StatesViewModel(USADataAPI: USADataAPI<[State]>(urlString: StatesConstants.statesURL))
+    @StateObject var statesVM : StatesViewModel = StatesViewModel(USADataAPI: USADataAPI<StateData>(urlString: StatesConstants.statesURL))
     
     var body: some View {
         TabView {

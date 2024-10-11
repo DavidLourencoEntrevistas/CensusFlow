@@ -25,6 +25,7 @@ class USADataAPI<T: Decodable> : USADataProtocol {
         }
         
         let (data, response) = try await urlSession.data(from: url)
+        
             
         guard let httpResponse = response as? HTTPURLResponse else{
             throw Errors.invalidResponse
@@ -36,10 +37,15 @@ class USADataAPI<T: Decodable> : USADataProtocol {
             
         do{
             let decodedResponse = try JSONDecoder().decode(T.self, from: data)
-                
+            
+            print(decodedResponse)
+            
             return decodedResponse
             
         } catch {
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("Failed to decode JSON. Response data: \(jsonString)")
+            }
             
             throw Errors.decodingError
             

@@ -10,15 +10,17 @@ import Foundation
 class StatesViewModel : ObservableObject{
     @Published var states: [State] = []
     
-    private let USADataAPI : USADataAPI<[State]>
+    private let USADataAPI : USADataAPI<StateData>
     
-    init(USADataAPI: USADataAPI<[State]>) {
+    init(USADataAPI: USADataAPI<StateData>) {
         self.USADataAPI = USADataAPI
     }
     
     func fetchNations() async{
         do{
-            states = try await USADataAPI.fetchData()
+            let stateData = try await USADataAPI.fetchData()
+            states = stateData.data
+        
         }catch{
             print("Error fetching states.")
         }

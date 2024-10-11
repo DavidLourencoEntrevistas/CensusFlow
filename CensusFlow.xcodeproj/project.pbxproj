@@ -34,6 +34,8 @@
 		12092D1A2CB954A700F30358 /* USADataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D192CB954A700F30358 /* USADataProtocol.swift */; };
 		12092D1F2CB95C8F00F30358 /* USADataNationAPIUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D1E2CB95C8F00F30358 /* USADataNationAPIUnitTests.swift */; };
 		12092D212CB95CC600F30358 /* USADataStatesAPIUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D202CB95CC600F30358 /* USADataStatesAPIUnitTests.swift */; };
+		12092D602CB9A41200F30358 /* NationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D5F2CB9A41200F30358 /* NationData.swift */; };
+		12092D642CB9A44400F30358 /* StateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D632CB9A44400F30358 /* StateData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		12092D192CB954A700F30358 /* USADataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USADataProtocol.swift; sourceTree = "<group>"; };
 		12092D1E2CB95C8F00F30358 /* USADataNationAPIUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USADataNationAPIUnitTests.swift; sourceTree = "<group>"; };
 		12092D202CB95CC600F30358 /* USADataStatesAPIUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USADataStatesAPIUnitTests.swift; sourceTree = "<group>"; };
+		12092D5F2CB9A41200F30358 /* NationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationData.swift; sourceTree = "<group>"; };
+		12092D632CB9A44400F30358 /* StateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 		12092CAE2CB9382200F30358 /* CensusFlow */ = {
 			isa = PBXGroup;
 			children = (
+				12092D5E2CB99AC800F30358 /* Components */,
 				12092D182CB9549700F30358 /* Protocols */,
 				12092CFE2CB93B1A00F30358 /* Service */,
 				12092CDF2CB938DE00F30358 /* Constants */,
@@ -150,9 +155,9 @@
 		12092CD92CB9384B00F30358 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				12092D622CB9A43100F30358 /* StateModels */,
+				12092D612CB9A41F00F30358 /* NationModels */,
 				12092D112CB94AAD00F30358 /* Enum */,
-				12092CE02CB9391400F30358 /* State.swift */,
-				12092CE22CB9391E00F30358 /* Nation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,6 +282,31 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		12092D5E2CB99AC800F30358 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		12092D612CB9A41F00F30358 /* NationModels */ = {
+			isa = PBXGroup;
+			children = (
+				12092D5F2CB9A41200F30358 /* NationData.swift */,
+				12092CE22CB9391E00F30358 /* Nation.swift */,
+			);
+			path = NationModels;
+			sourceTree = "<group>";
+		};
+		12092D622CB9A43100F30358 /* StateModels */ = {
+			isa = PBXGroup;
+			children = (
+				12092CE02CB9391400F30358 /* State.swift */,
+				12092D632CB9A44400F30358 /* StateData.swift */,
+			);
+			path = StateModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -387,11 +417,13 @@
 				12092D0A2CB940F300F30358 /* TabsConstants.swift in Sources */,
 				12092CE52CB9393F00F30358 /* StatesList.swift in Sources */,
 				12092D152CB9533F00F30358 /* USADataAPI.swift in Sources */,
+				12092D642CB9A44400F30358 /* StateData.swift in Sources */,
 				12092CE32CB9391E00F30358 /* Nation.swift in Sources */,
 				12092CB02CB9382200F30358 /* CensusFlowApp.swift in Sources */,
 				12092CDD2CB9388200F30358 /* Tabs.swift in Sources */,
 				12092CE12CB9391400F30358 /* State.swift in Sources */,
 				12092CEF2CB939B100F30358 /* NationConstants.swift in Sources */,
+				12092D602CB9A41200F30358 /* NationData.swift in Sources */,
 				12092CF12CB939C100F30358 /* StatesConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

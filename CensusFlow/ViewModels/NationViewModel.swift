@@ -9,19 +9,20 @@ import Foundation
 
 class NationViewModel : ObservableObject{
     
-    @Published var nations: [Nation] = []
+    @Published var nationList: [Nation] = []
     
-    private let USADataAPI : USADataAPI<[Nation]>
+    private let USADataAPI : USADataAPI<NationData>
     
-    init(USADataAPI: USADataAPI<[Nation]>) {
+    init(USADataAPI: USADataAPI<NationData>) {
         self.USADataAPI = USADataAPI
     }
     
-    func fetchNations() async{
+    func fetchNation() async{
         do{
-            nations = try await USADataAPI.fetchData()
+            let nationData = try await USADataAPI.fetchData()
+            nationList = nationData.data
         }catch{
-            print("Error fetching nations.")
+            print("Error fetching nations: \(error)")
         }
     }
     

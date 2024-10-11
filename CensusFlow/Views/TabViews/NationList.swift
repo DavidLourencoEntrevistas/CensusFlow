@@ -13,17 +13,20 @@ struct NationList: View {
     
     var body: some View {
         NavigationStack {
-            List{
+            List(nationVM.nationList, id: \.year){ nation in
                 Section(content: {
-                    
+                    Text("Population: \(nation.population)")
                 }, header: {
-                    
+                    Text("Year \(nation.year)")
                 })
             }.navigationTitle(NationConstants.navigationTitle)
+                .task {
+                  await nationVM.fetchNation()
+                }
         }
     }
 }
 
 #Preview {
-    NationList()
+    NationList().environmentObject(NationViewModel(USADataAPI: USADataAPI<NationData>(urlString: NationConstants.nationURL)))
 }

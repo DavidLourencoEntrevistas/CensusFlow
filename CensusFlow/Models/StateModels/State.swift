@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct State : Decodable {
+struct State : Codable {
     
     let idState : String
     let state : String

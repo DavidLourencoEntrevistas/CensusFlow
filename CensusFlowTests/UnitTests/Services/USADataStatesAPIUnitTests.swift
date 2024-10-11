@@ -12,7 +12,7 @@ final class USADataStatesAPIUnitTests: XCTestCase {
 
     var session: URLSession!
     var urlString: String!
-    var sut: USADataAPI<[State]>!
+    var sut: USADataAPI<StateData>!
 
     override func setUp() {
         super.setUp()
@@ -22,7 +22,7 @@ final class USADataStatesAPIUnitTests: XCTestCase {
         session = URLSession(configuration: configuration)
         
         urlString = "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest"
-        sut = USADataAPI<[State]>(urlString: urlString, session: session)
+        sut = USADataAPI<StateData>(urlString: urlString, session: session)
     }
 
     override func tearDown() {
@@ -38,7 +38,7 @@ final class USADataStatesAPIUnitTests: XCTestCase {
     
     func testFetchNationPopulationData_withInvalidUrl_throwsInvalidUrlError() async throws {
         // Arrange
-        sut = USADataAPI<[State]>(urlString: "invalid-url", session: session)
+        sut = USADataAPI<StateData>(urlString: "invalid-url", session: session)
         
         // Act & Assert
         do {
@@ -53,7 +53,7 @@ final class USADataStatesAPIUnitTests: XCTestCase {
     
     func testFetchNationPopulationData_withInvalidResponse_throwsInvalidResponseError() async throws {
         // Arrange
-        sut = USADataAPI<[State]>(urlString: urlString, session: session)
+        sut = USADataAPI<StateData>(urlString: urlString, session: session)
         guard let url = URL(string: urlString) else {
             XCTFail("The URL should be valid.")
             return
@@ -76,7 +76,7 @@ final class USADataStatesAPIUnitTests: XCTestCase {
         
     func testFetchNationPopulationData_withServerError_throwsServerError() async throws {
         // Arrange
-        sut = USADataAPI<[State]>(urlString: urlString, session: session)
+        sut = USADataAPI<StateData>(urlString: urlString, session: session)
         
         // Simulate server error
         MockURLProtocol.statusCode = 500
@@ -94,7 +94,7 @@ final class USADataStatesAPIUnitTests: XCTestCase {
         
     func testFetchNationPopulationData_withDecodingError_throwsDecodingError() async throws {
         // Arrange
-        sut = USADataAPI<[State]>(urlString: urlString, session: session)
+        sut = USADataAPI<StateData>(urlString: urlString, session: session)
         
         // Simulate invalid JSON data
         let invalidJSONData = "{ invalid json }".data(using: .utf8)
@@ -113,33 +113,38 @@ final class USADataStatesAPIUnitTests: XCTestCase {
         
     func testFetchNationPopulationData_withValidResponse_returnsDecodedData() async throws {
         // Arrange
-        sut = USADataAPI<[State]>(urlString: urlString, session: session)
+        sut = USADataAPI<StateData>(urlString: urlString, session: session)
         
         // Simulate valid JSON data
         let validJSONData = """
-        [{
-            "ID State": "04000US01",
-            "State": "Alabama",
-            "ID Year": 2022,
-            "Year": "2022",
-            "Population": 5028092,
-            "Slug State": "alabama"
-        }]
+        {
+            "data": [
+                {
+                    "ID State": "04000US01",
+                    "State": "Alabama",
+                    "ID Year": 2022,
+                    "Year": "2022",
+                    "Population": 5028092,
+                    "Slug State": "alabama"
+                }
+            ]
+        }
         """.data(using: .utf8)
+        
         
         MockURLProtocol.stubResponseData = validJSONData
         
         // Act
         do {
-            let response: [State] = try await sut.fetchData()
+            let response: StateData = try await sut.fetchData()
             
             // Assert
-            XCTAssertEqual(response.first?.idState, "04000US01")
-            XCTAssertEqual(response.first?.state, "Alabama")
-            XCTAssertEqual(response.first?.idYear, 2022)
-            XCTAssertEqual(response.first?.year, "2022")
-            XCTAssertEqual(response.first?.population, 5028092)
-            XCTAssertEqual(response.first?.slugState, "alabama")
+            XCTAssertEqual(response.data.first?.idState, "04000US01")
+            XCTAssertEqual(response.data.first?.state, "Alabama")
+            XCTAssertEqual(response.data.first?.idYear, 2022)
+            XCTAssertEqual(response.data.first?.year, "2022")
+            XCTAssertEqual(response.data.first?.population, 5028092)
+            XCTAssertEqual(response.data.first?.slugState, "alabama")
         } catch {
             XCTFail("Unexpected error: \(error)")
         }
