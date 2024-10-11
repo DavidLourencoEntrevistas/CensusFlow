@@ -9,7 +9,16 @@ import SwiftUI
 
 struct Tabs: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            NationList().tabItem { 
+                Image(systemName: TabsConstants.nationIcon)
+                Text(TabsConstants.nationText)
+            }
+            StatesList().tabItem { 
+                Image(systemName: TabsConstants.statesIcon)
+                Text(TabsConstants.statesText)
+            }
+        }.tint(Colors.accentIconColor)
     }
 }
 
