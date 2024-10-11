@@ -16,7 +16,7 @@ struct NationList: View {
                 }, header: {
                     
                 })
-            }.navigationTitle("🇺🇸 USA Nation")
+            }.navigationTitle(NationConstants.navigationTitle)
         }
     }
 }

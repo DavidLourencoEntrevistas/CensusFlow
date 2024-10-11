@@ -9,5 +9,6 @@ import Foundation
 
 struct NationConstants{
     
+    static let navigationTitle = "🇺🇸 USA Nation"
     
 }

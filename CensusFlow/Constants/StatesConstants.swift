@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct StatesConstants {
+    
+    static let navigationTitle = "🇺🇸 USA States "
+    
+}

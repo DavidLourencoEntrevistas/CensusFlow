@@ -23,8 +23,6 @@
 		12092CF62CB93A2500F30358 /* StatesVMUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092CF52CB93A2500F30358 /* StatesVMUnitTests.swift */; };
 		12092CFB2CB93A6E00F30358 /* NationConstantsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092CFA2CB93A6E00F30358 /* NationConstantsUnitTests.swift */; };
 		12092CFD2CB93A8500F30358 /* StatesConstantsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092CFC2CB93A8500F30358 /* StatesConstantsUnitTests.swift */; };
-		12092D002CB93B3200F30358 /* NationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092CFF2CB93B3200F30358 /* NationAPI.swift */; };
-		12092D022CB93B3C00F30358 /* StatesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D012CB93B3C00F30358 /* StatesAPI.swift */; };
 		12092D042CB93B5300F30358 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D032CB93B5300F30358 /* MockURLProtocol.swift */; };
 		12092D062CB93B9D00F30358 /* MockNationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D052CB93B9D00F30358 /* MockNationAPI.swift */; };
 		12092D082CB93BB400F30358 /* MockStatesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D072CB93BB400F30358 /* MockStatesAPI.swift */; };
@@ -32,6 +30,8 @@
 		12092D0C2CB941E500F30358 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D0B2CB941E500F30358 /* Colors.swift */; };
 		12092D0E2CB9423000F30358 /* TabsConstantsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D0D2CB9423000F30358 /* TabsConstantsUnitTests.swift */; };
 		12092D102CB9423F00F30358 /* ColorsConstantsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D0F2CB9423F00F30358 /* ColorsConstantsUnitTests.swift */; };
+		12092D132CB94ABB00F30358 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D122CB94ABB00F30358 /* Errors.swift */; };
+		12092D152CB9533F00F30358 /* USADataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D142CB9533F00F30358 /* USADataAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +72,6 @@
 		12092CF52CB93A2500F30358 /* StatesVMUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesVMUnitTests.swift; sourceTree = "<group>"; };
 		12092CFA2CB93A6E00F30358 /* NationConstantsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationConstantsUnitTests.swift; sourceTree = "<group>"; };
 		12092CFC2CB93A8500F30358 /* StatesConstantsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesConstantsUnitTests.swift; sourceTree = "<group>"; };
-		12092CFF2CB93B3200F30358 /* NationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationAPI.swift; sourceTree = "<group>"; };
-		12092D012CB93B3C00F30358 /* StatesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesAPI.swift; sourceTree = "<group>"; };
 		12092D032CB93B5300F30358 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		12092D052CB93B9D00F30358 /* MockNationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNationAPI.swift; sourceTree = "<group>"; };
 		12092D072CB93BB400F30358 /* MockStatesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStatesAPI.swift; sourceTree = "<group>"; };
@@ -81,6 +79,8 @@
 		12092D0B2CB941E500F30358 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		12092D0D2CB9423000F30358 /* TabsConstantsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsConstantsUnitTests.swift; sourceTree = "<group>"; };
 		12092D0F2CB9423F00F30358 /* ColorsConstantsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConstantsUnitTests.swift; sourceTree = "<group>"; };
+		12092D122CB94ABB00F30358 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		12092D142CB9533F00F30358 /* USADataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USADataAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +161,7 @@
 		12092CD92CB9384B00F30358 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				12092D112CB94AAD00F30358 /* Enum */,
 				12092CE02CB9391400F30358 /* State.swift */,
 				12092CE22CB9391E00F30358 /* Nation.swift */,
 			);
@@ -257,10 +258,17 @@
 		12092CFE2CB93B1A00F30358 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				12092CFF2CB93B3200F30358 /* NationAPI.swift */,
-				12092D012CB93B3C00F30358 /* StatesAPI.swift */,
+				12092D142CB9533F00F30358 /* USADataAPI.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		12092D112CB94AAD00F30358 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				12092D122CB94ABB00F30358 /* Errors.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,18 +403,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				12092CED2CB9399200F30358 /* StatesViewModel.swift in Sources */,
+				12092D132CB94ABB00F30358 /* Errors.swift in Sources */,
 				12092CEB2CB9398900F30358 /* NationViewModel.swift in Sources */,
 				12092CE72CB9395000F30358 /* NationList.swift in Sources */,
 				12092D0C2CB941E500F30358 /* Colors.swift in Sources */,
 				12092D0A2CB940F300F30358 /* TabsConstants.swift in Sources */,
 				12092CE52CB9393F00F30358 /* StatesList.swift in Sources */,
-				12092D022CB93B3C00F30358 /* StatesAPI.swift in Sources */,
+				12092D152CB9533F00F30358 /* USADataAPI.swift in Sources */,
 				12092CE32CB9391E00F30358 /* Nation.swift in Sources */,
 				12092CB02CB9382200F30358 /* CensusFlowApp.swift in Sources */,
 				12092CDD2CB9388200F30358 /* Tabs.swift in Sources */,
 				12092CE12CB9391400F30358 /* State.swift in Sources */,
 				12092CEF2CB939B100F30358 /* NationConstants.swift in Sources */,
-				12092D002CB93B3200F30358 /* NationAPI.swift in Sources */,
 				12092CF12CB939C100F30358 /* StatesConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,5 @@ import Foundation
 import SwiftUI
 
 struct Colors {
-    
     static let accentIconColor = Color(.systemRed)
-    
 }

@@ -16,7 +16,7 @@ struct StatesList: View {
                 }, header: {
                     
                 })
-            }.navigationTitle("🇺🇸 USA States ")
+            }.navigationTitle(StatesConstants.navigationTitle)
         }
     }
 }
