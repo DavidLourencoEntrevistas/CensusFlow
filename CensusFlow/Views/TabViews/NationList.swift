@@ -9,7 +9,15 @@ import SwiftUI
 
 struct NationList: View {
     var body: some View {
-        Text("This is the nation screen.")
+        NavigationStack {
+            List{
+                Section(content: {
+                    
+                }, header: {
+                    
+                })
+            }.navigationTitle("🇺🇸 USA Nation")
+        }
     }
 }
 
