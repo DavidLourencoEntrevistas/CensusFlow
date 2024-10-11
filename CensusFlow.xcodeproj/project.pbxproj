@@ -32,18 +32,12 @@
 		12092D152CB9533F00F30358 /* USADataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D142CB9533F00F30358 /* USADataAPI.swift */; };
 		12092D172CB9548300F30358 /* MockUSADataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D162CB9548300F30358 /* MockUSADataAPI.swift */; };
 		12092D1A2CB954A700F30358 /* USADataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D192CB954A700F30358 /* USADataProtocol.swift */; };
-		12092D1D2CB9598300F30358 /* USADataAPIUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D1C2CB9598300F30358 /* USADataAPIUnitTests.swift */; };
+		12092D1F2CB95C8F00F30358 /* USADataNationAPIUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D1E2CB95C8F00F30358 /* USADataNationAPIUnitTests.swift */; };
+		12092D212CB95CC600F30358 /* USADataStatesAPIUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D202CB95CC600F30358 /* USADataStatesAPIUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		12092CBD2CB9382300F30358 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 12092CA42CB9382200F30358 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 12092CAB2CB9382200F30358;
-			remoteInfo = CensusFlow;
-		};
-		12092CC72CB9382300F30358 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 12092CA42CB9382200F30358 /* Project object */;
 			proxyType = 1;
@@ -58,7 +52,6 @@
 		12092CB32CB9382300F30358 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12092CB62CB9382300F30358 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		12092CBC2CB9382300F30358 /* CensusFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CensusFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		12092CC62CB9382300F30358 /* CensusFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CensusFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12092CDC2CB9388200F30358 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		12092CE02CB9391400F30358 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		12092CE22CB9391E00F30358 /* Nation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nation.swift; sourceTree = "<group>"; };
@@ -82,7 +75,8 @@
 		12092D142CB9533F00F30358 /* USADataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USADataAPI.swift; sourceTree = "<group>"; };
 		12092D162CB9548300F30358 /* MockUSADataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUSADataAPI.swift; sourceTree = "<group>"; };
 		12092D192CB954A700F30358 /* USADataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USADataProtocol.swift; sourceTree = "<group>"; };
-		12092D1C2CB9598300F30358 /* USADataAPIUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USADataAPIUnitTests.swift; sourceTree = "<group>"; };
+		12092D1E2CB95C8F00F30358 /* USADataNationAPIUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USADataNationAPIUnitTests.swift; sourceTree = "<group>"; };
+		12092D202CB95CC600F30358 /* USADataStatesAPIUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USADataStatesAPIUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,13 +88,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		12092CB92CB9382300F30358 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		12092CC32CB9382300F30358 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -124,7 +111,6 @@
 			children = (
 				12092CAC2CB9382200F30358 /* CensusFlow.app */,
 				12092CBC2CB9382300F30358 /* CensusFlowTests.xctest */,
-				12092CC62CB9382300F30358 /* CensusFlowUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -285,7 +271,8 @@
 		12092D1B2CB9596000F30358 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				12092D1C2CB9598300F30358 /* USADataAPIUnitTests.swift */,
+				12092D1E2CB95C8F00F30358 /* USADataNationAPIUnitTests.swift */,
+				12092D202CB95CC600F30358 /* USADataStatesAPIUnitTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -328,24 +315,6 @@
 			productReference = 12092CBC2CB9382300F30358 /* CensusFlowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		12092CC52CB9382300F30358 /* CensusFlowUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 12092CD62CB9382300F30358 /* Build configuration list for PBXNativeTarget "CensusFlowUITests" */;
-			buildPhases = (
-				12092CC22CB9382300F30358 /* Sources */,
-				12092CC32CB9382300F30358 /* Frameworks */,
-				12092CC42CB9382300F30358 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				12092CC82CB9382300F30358 /* PBXTargetDependency */,
-			);
-			name = CensusFlowUITests;
-			productName = CensusFlowUITests;
-			productReference = 12092CC62CB9382300F30358 /* CensusFlowUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -362,10 +331,6 @@
 					12092CBB2CB9382300F30358 = {
 						CreatedOnToolsVersion = 15.4;
 						LastSwiftMigration = 1540;
-						TestTargetID = 12092CAB2CB9382200F30358;
-					};
-					12092CC52CB9382300F30358 = {
-						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 12092CAB2CB9382200F30358;
 					};
 				};
@@ -385,7 +350,6 @@
 			targets = (
 				12092CAB2CB9382200F30358 /* CensusFlow */,
 				12092CBB2CB9382300F30358 /* CensusFlowTests */,
-				12092CC52CB9382300F30358 /* CensusFlowUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -401,13 +365,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		12092CBA2CB9382300F30358 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		12092CC42CB9382300F30358 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -443,22 +400,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12092D1D2CB9598300F30358 /* USADataAPIUnitTests.swift in Sources */,
 				12092CF62CB93A2500F30358 /* StatesVMUnitTests.swift in Sources */,
 				12092D0E2CB9423000F30358 /* TabsConstantsUnitTests.swift in Sources */,
+				12092D1F2CB95C8F00F30358 /* USADataNationAPIUnitTests.swift in Sources */,
 				12092D102CB9423F00F30358 /* ColorsConstantsUnitTests.swift in Sources */,
 				12092CFD2CB93A8500F30358 /* StatesConstantsUnitTests.swift in Sources */,
+				12092D212CB95CC600F30358 /* USADataStatesAPIUnitTests.swift in Sources */,
 				12092D042CB93B5300F30358 /* MockURLProtocol.swift in Sources */,
 				12092CFB2CB93A6E00F30358 /* NationConstantsUnitTests.swift in Sources */,
 				12092D172CB9548300F30358 /* MockUSADataAPI.swift in Sources */,
 				12092CF42CB93A0000F30358 /* NationVMUnitTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		12092CC22CB9382300F30358 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,11 +420,6 @@
 			isa = PBXTargetDependency;
 			target = 12092CAB2CB9382200F30358 /* CensusFlow */;
 			targetProxy = 12092CBD2CB9382300F30358 /* PBXContainerItemProxy */;
-		};
-		12092CC82CB9382300F30358 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 12092CAB2CB9382200F30358 /* CensusFlow */;
-			targetProxy = 12092CC72CB9382300F30358 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -700,42 +646,6 @@
 			};
 			name = Release;
 		};
-		12092CD72CB9382300F30358 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 76X35WT69V;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = davidLourenco.CensusFlowUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CensusFlow;
-			};
-			name = Debug;
-		};
-		12092CD82CB9382300F30358 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 76X35WT69V;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = davidLourenco.CensusFlowUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CensusFlow;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -762,15 +672,6 @@
 			buildConfigurations = (
 				12092CD42CB9382300F30358 /* Debug */,
 				12092CD52CB9382300F30358 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		12092CD62CB9382300F30358 /* Build configuration list for PBXNativeTarget "CensusFlowUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				12092CD72CB9382300F30358 /* Debug */,
-				12092CD82CB9382300F30358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

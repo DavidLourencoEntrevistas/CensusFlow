@@ -10,5 +10,5 @@ import Foundation
 
 protocol USADataProtocol{
     associatedtype DataType: Decodable
-    func fetchNationPopulationData() async throws -> DataType
+    func fetchData() async throws -> DataType
 }

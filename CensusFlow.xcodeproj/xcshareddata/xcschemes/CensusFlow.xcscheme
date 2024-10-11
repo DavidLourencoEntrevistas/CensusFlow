@@ -52,6 +52,17 @@
                ReferencedContainer = "container:CensusFlow.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "12092D342CB964D700F30358"
+               BuildableName = "CensusFlowUITestsPlaceholder.xctest"
+               BlueprintName = "CensusFlowUITestsPlaceholder"
+               ReferencedContainer = "container:CensusFlow.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -18,17 +18,17 @@ class MockUSADataAPI<T: Decodable>: USADataProtocol {
     var shouldReturnError : Bool = false
     
     
-    func fetchNationPopulationData() async throws -> T {
+    func fetchData() async throws -> T {
         if shouldReturnError{
             if let error = mockError{
                 throw error
             } else {
-                throw Errors.unknownError(NSError(domain: "Unknown Error", code: -1, userInfo: nil))
+                throw Errors.unknownError
             }
         }
         
         guard let data = mockData else{
-            throw Errors.unknownError(NSError(domain: "No mock data", code: -1, userInfo: nil))
+            throw Errors.unknownError
         }
         
         return data
