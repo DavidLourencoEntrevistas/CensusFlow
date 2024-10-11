@@ -32,6 +32,7 @@
 		12092D152CB9533F00F30358 /* USADataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D142CB9533F00F30358 /* USADataAPI.swift */; };
 		12092D172CB9548300F30358 /* MockUSADataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D162CB9548300F30358 /* MockUSADataAPI.swift */; };
 		12092D1A2CB954A700F30358 /* USADataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D192CB954A700F30358 /* USADataProtocol.swift */; };
+		12092D1D2CB9598300F30358 /* USADataAPIUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D1C2CB9598300F30358 /* USADataAPIUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		12092D142CB9533F00F30358 /* USADataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USADataAPI.swift; sourceTree = "<group>"; };
 		12092D162CB9548300F30358 /* MockUSADataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUSADataAPI.swift; sourceTree = "<group>"; };
 		12092D192CB954A700F30358 /* USADataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USADataProtocol.swift; sourceTree = "<group>"; };
+		12092D1C2CB9598300F30358 /* USADataAPIUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USADataAPIUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 		12092CDE2CB938AB00F30358 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				12092D1B2CB9596000F30358 /* Services */,
 				12092CF92CB93A4F00F30358 /* Constants */,
 				12092CF82CB93A4500F30358 /* ViewModels */,
 				12092CF72CB93A3F00F30358 /* Mocks */,
@@ -277,6 +280,14 @@
 				12092D192CB954A700F30358 /* USADataProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		12092D1B2CB9596000F30358 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				12092D1C2CB9598300F30358 /* USADataAPIUnitTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12092D1D2CB9598300F30358 /* USADataAPIUnitTests.swift in Sources */,
 				12092CF62CB93A2500F30358 /* StatesVMUnitTests.swift in Sources */,
 				12092D0E2CB9423000F30358 /* TabsConstantsUnitTests.swift in Sources */,
 				12092D102CB9423F00F30358 /* ColorsConstantsUnitTests.swift in Sources */,
