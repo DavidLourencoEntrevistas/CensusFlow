@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct NationList: View {
+    
+    @EnvironmentObject var nationVM : NationViewModel
+    
     var body: some View {
         NavigationStack {
             List{

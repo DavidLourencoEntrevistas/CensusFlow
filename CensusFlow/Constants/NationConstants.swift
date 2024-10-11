@@ -10,5 +10,6 @@ import Foundation
 struct NationConstants{
     
     static let navigationTitle = "🇺🇸 USA Nation"
+    static let nationURL = "https://datausa.io/api/data?drilldowns=Nation&measures=Population"
     
 }

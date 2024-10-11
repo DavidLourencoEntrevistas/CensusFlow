@@ -8,12 +8,10 @@
 import Foundation
 
 enum Errors : Error{
-    
     case invalidUrl
     case invalidResponse
     case serverError
     case decodingError
     case unknownError
 
-    
 }

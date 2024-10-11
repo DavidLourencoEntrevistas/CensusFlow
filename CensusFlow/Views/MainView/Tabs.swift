@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct Tabs: View {
+    
+    @StateObject var nationVM : NationViewModel = NationViewModel(USADataAPI: USADataAPI<[Nation]>(urlString: NationConstants.nationURL))
+    
+    @StateObject var statesVM : StatesViewModel = StatesViewModel(USADataAPI: USADataAPI<[State]>(urlString: StatesConstants.statesURL))
+    
     var body: some View {
         TabView {
             NationList().tabItem { 
                 Image(systemName: TabsConstants.nationIcon)
                 Text(TabsConstants.nationText)
-            }
-            StatesList().tabItem { 
+            }.environmentObject(nationVM)
+            
+            StatesList().tabItem {
                 Image(systemName: TabsConstants.statesIcon)
                 Text(TabsConstants.statesText)
-            }
+            }.environmentObject(statesVM)
+            
         }.tint(Colors.accentIconColor)
     }
 }

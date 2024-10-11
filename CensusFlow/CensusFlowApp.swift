@@ -9,7 +9,10 @@ import SwiftUI
 
 @main
 struct CensusFlowApp: App {
+
+    
     var body: some Scene {
+        
         WindowGroup {
             Tabs()
         }
