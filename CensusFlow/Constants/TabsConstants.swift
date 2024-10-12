@@ -7,12 +7,11 @@
 
 import Foundation
 
+// MARK: Note -> No need for localization, just english.
 struct TabsConstants{
     
     static let nationIcon = "flag.fill"
     static let statesIcon = "house.and.flag.fill"
-    
-    // MARK: Note -> No need for localization, just english.
     static let nationText = "USA Nation"
     static let statesText = "States"
     

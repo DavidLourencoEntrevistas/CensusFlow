@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: Note -> No need for localization, just english.
 struct StatesConstants {
     
     static let navigationTitle = "🇺🇸 States"

@@ -10,15 +10,24 @@ import XCTest
 
 final class NationConstantsUnitTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testNationConstantsValues(){
+        
+        // Arrange
+        let expectedValues = [
+            "🇺🇸 USA Nation",
+            "https://datausa.io/api/data?drilldowns=Nation&measures=Population"
+        ]
+        
+        // Act
+        let actualValues = [
+            NationConstants.navigationTitle,
+            NationConstants.nationURL
+        ]
+        
+        // Assert
+        for (index, expectedValue) in expectedValues.enumerated() {
+            XCTAssertEqual(actualValues[index], expectedValue, "The nation constant value at index \(index) should be \(expectedValue).")
+        }
+    
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-
-
-
 }

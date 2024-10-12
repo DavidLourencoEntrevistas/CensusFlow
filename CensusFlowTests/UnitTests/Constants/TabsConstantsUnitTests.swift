@@ -6,16 +6,33 @@
 //
 
 import XCTest
+@testable import CensusFlow
 
 final class TabsConstantsUnitTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    func testTabsConstantsValues(){
+        
+        // Arrange
+        let expectedValues = [
+            "flag.fill",
+            "house.and.flag.fill",
+            "USA Nation",
+            "States"
+        ]
+        
+        // Act
+        let actualValues = [
+            TabsConstants.nationIcon,
+            TabsConstants.statesIcon,
+            TabsConstants.nationText,
+            TabsConstants.statesText
+        ]
+        
+        // Assert
+        for (index, expectedValue) in expectedValues.enumerated(){
+            XCTAssertEqual(actualValues[index], expectedValue, "The tabs constant value at index \(index) should be \(expectedValue).")
+        }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
 
 }

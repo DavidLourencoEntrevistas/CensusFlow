@@ -10,13 +10,28 @@ import XCTest
 
 final class StatesConstantsUnitTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testStatesConstantsValues(){
+        
+        // Arrange
+        let expectedValues = [
+            "🇺🇸 States",
+            "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest",
+            "info.circle"
+        ]
+        
+        // Act
+        let actualValues = [
+            StatesConstants.navigationTitle,
+            StatesConstants.statesURL,
+            StatesConstants.statesInfoIcon
+        
+        ]
+        
+        // Assert
+        for (index, expectedValue) in expectedValues.enumerated(){
+            XCTAssertEqual(actualValues[index], expectedValue, "The states constant value at index \(index) should be \(expectedValue).")
+        }
+        
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-
+    
 }

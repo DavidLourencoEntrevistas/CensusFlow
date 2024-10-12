@@ -6,16 +6,23 @@
 //
 
 import XCTest
+import SwiftUI
+
+@testable import CensusFlow
 
 final class ColorsConstantsUnitTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testColorsConstantsValues(){
+        
+        // Arrange
+        let expectedColor = Color(.systemRed)
+        
+        // Act
+        let isColorEqual = Colors.accentIconColor == expectedColor
+        
+        // Assert
+        XCTAssertTrue(isColorEqual, "The color value should be valid.")
+        
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
 
 }

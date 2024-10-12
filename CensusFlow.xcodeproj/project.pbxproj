@@ -42,6 +42,7 @@
 		12092D6E2CB9D74700F30358 /* StateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D6D2CB9D74700F30358 /* StateRow.swift */; };
 		12092D792CBA04A300F30358 /* InfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D782CBA04A300F30358 /* InfoSheet.swift */; };
 		12092D7B2CBA053200F30358 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D7A2CBA053200F30358 /* GeneralConstants.swift */; };
+		12092D7D2CBAAC8B00F30358 /* GeneralConstantsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D7C2CBAAC8B00F30358 /* GeneralConstantsUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		12092D6D2CB9D74700F30358 /* StateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateRow.swift; sourceTree = "<group>"; };
 		12092D782CBA04A300F30358 /* InfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheet.swift; sourceTree = "<group>"; };
 		12092D7A2CBA053200F30358 /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
+		12092D7C2CBAAC8B00F30358 /* GeneralConstantsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstantsUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 				12092CFC2CB93A8500F30358 /* StatesConstantsUnitTests.swift */,
 				12092D0D2CB9423000F30358 /* TabsConstantsUnitTests.swift */,
 				12092D0F2CB9423F00F30358 /* ColorsConstantsUnitTests.swift */,
+				12092D7C2CBAAC8B00F30358 /* GeneralConstantsUnitTests.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				12092D042CB93B5300F30358 /* MockURLProtocol.swift in Sources */,
 				12092CFB2CB93A6E00F30358 /* NationConstantsUnitTests.swift in Sources */,
 				12092D172CB9548300F30358 /* MockUSADataAPI.swift in Sources */,
+				12092D7D2CBAAC8B00F30358 /* GeneralConstantsUnitTests.swift in Sources */,
 				12092CF42CB93A0000F30358 /* NationVMUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
