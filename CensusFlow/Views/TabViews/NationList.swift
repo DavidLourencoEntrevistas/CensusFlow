@@ -13,16 +13,34 @@ struct NationList: View {
     
     var body: some View {
         NavigationStack {
-            List(nationVM.nationList, id: \.year){ nation in
-                Section(content: {
-                    Text("Population: \(nation.population)")
-                }, header: {
-                    Text("Year \(nation.year)")
-                })
-            }.navigationTitle(NationConstants.navigationTitle)
-                .task {
-                  await nationVM.fetchNation()
+            if !nationVM.isLoading {
+                List(nationVM.filteredNationList, id: \.id){ nation in
+                    Section(content: {
+                        NationRow(populationValue: nation.population)
+                    }, header: {
+                        NationHeader(year: nation.year)
+                    })
+                }.navigationTitle(NationConstants.navigationTitle)
+                .searchable(text: $nationVM.nationSearchBarText)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button(action: {
+                                // Toggle the info view
+                                nationVM.showInfoView.toggle()
+                            }) {
+                                Image(systemName: StatesConstants.statesInfoIcon)
+                                .font(.headline)
+                                .foregroundColor(Colors.accentIconColor)
+                            }
+                        }
+                    }.sheet(isPresented: $nationVM.showInfoView){
+                        InfoSheet()
                 }
+            } else {
+                ProgressView()
+            }
+        }.task {
+            await nationVM.fetchNation()
         }
     }
 }

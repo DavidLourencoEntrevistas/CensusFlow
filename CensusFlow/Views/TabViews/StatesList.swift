@@ -9,21 +9,50 @@ import SwiftUI
 
 struct StatesList: View {
     
-    @EnvironmentObject var statesVM : NationViewModel
+    @EnvironmentObject var statesVM : StatesViewModel
     
     var body: some View {
         NavigationStack {
-            List{
-                Section(content: {
+            if !statesVM.isLoading {
+                List(statesVM.filteredStateList, id: \.id){ state in
+                        
+                        if !statesVM.isLoading{
+                            Section(content: {
+                                StateRow(populationValue: state.population)
+                            }, header: {
+                                StateHeader(stateName: state.slugState)
+                            })
+                        }else{
+                            ProgressView()
+                        }
                     
-                }, header: {
-                    
-                })
-            }.navigationTitle(StatesConstants.navigationTitle)
+                    }
+                    .navigationTitle(StatesConstants.navigationTitle)
+                    .searchable(text: $statesVM.statesSearchBarText)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button(action: {
+                                // Toggle the info view
+                                statesVM.showInfoView.toggle()
+                            }) {
+                                Image(systemName: StatesConstants.statesInfoIcon)
+                                .font(.headline)
+                                .foregroundColor(Colors.accentIconColor)
+                            }
+                        }
+                    }.sheet(isPresented: $statesVM.showInfoView){
+                        InfoSheet()
+                }
+            } else {
+                ProgressView()
+            }
+        }
+        .task {
+            await statesVM.fetchState()
         }
     }
 }
 
 #Preview {
-    StatesList()
+    StatesList().environmentObject(StatesViewModel(USADataAPI: USADataAPI<StateData>(urlString: StatesConstants.statesURL)))
 }

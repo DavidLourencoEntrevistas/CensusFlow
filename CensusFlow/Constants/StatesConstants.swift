@@ -11,5 +11,6 @@ struct StatesConstants {
     
     static let navigationTitle = "🇺🇸 States"
     static let statesURL = "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest"
+    static let statesInfoIcon = "info.circle"
     
 }
