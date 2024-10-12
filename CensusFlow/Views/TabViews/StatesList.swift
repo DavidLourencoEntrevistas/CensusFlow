@@ -41,7 +41,9 @@ struct StatesList: View {
                             }
                         }
                     }.sheet(isPresented: $statesVM.showInfoView){
-                        InfoSheet()
+                        InfoSheet(onClose: {
+                            statesVM.showInfoView = false
+                        })
                 }
             } else {
                 ProgressView()

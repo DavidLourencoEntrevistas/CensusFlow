@@ -34,7 +34,9 @@ struct NationList: View {
                             }
                         }
                     }.sheet(isPresented: $nationVM.showInfoView){
-                        InfoSheet()
+                        InfoSheet(onClose: {
+                            nationVM.showInfoView = false
+                        })
                 }
             } else {
                 ProgressView()

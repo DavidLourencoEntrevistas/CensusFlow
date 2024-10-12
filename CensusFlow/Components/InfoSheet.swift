@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct InfoSheet: View {
+struct InfoSheet : View {
+    
+    var onClose: () -> Void
+    
     var body: some View {
         NavigationStack{
             VStack(alignment: .leading, spacing: 20) {
@@ -47,6 +50,19 @@ struct InfoSheet: View {
                 }
             }.navigationTitle(GeneralConstants.title)
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: {
+                            // Toggle the info view
+                            onClose()
+    
+                        }) {
+                            Image(systemName: "xmark")
+                                .font(.callout)
+                            .foregroundColor(Colors.accentIconColor)
+                        }
+                    }
+                }
         }
     }
     
@@ -54,5 +70,5 @@ struct InfoSheet: View {
 }
 
 #Preview {
-    InfoSheet()
+    InfoSheet(onClose: {})
 }
