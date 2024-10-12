@@ -9,6 +9,6 @@ import Foundation
 
 struct StateData : Codable {
     
-    let data : [State]
+    let data : [StateModel]
     
 }

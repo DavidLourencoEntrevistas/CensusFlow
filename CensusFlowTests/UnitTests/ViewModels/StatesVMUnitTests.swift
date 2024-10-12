@@ -37,7 +37,7 @@ final class StatesVMUnitTests: XCTestCase {
 
     func testFilteredStateListWhenSearchBarIsEmpty() {
         // Arrange
-        let state = State(idState: "04000US01", state: "Alabama", idYear: 2022, year: "2022", population: 5028092, slugState: "alabama")
+        let state = StateModel(idState: "04000US01", state: "Alabama", idYear: 2022, year: "2022", population: 5028092, slugState: "alabama")
         viewModel.states = [state]
         viewModel.statesSearchBarText = ""
 
@@ -51,7 +51,7 @@ final class StatesVMUnitTests: XCTestCase {
 
     func testFilteredStateListWithSearchTextForPopulation() {
         // Arrange
-        let state = State(idState: "04000US01", state: "Alabama", idYear: 2022, year: "2022", population: 5028092, slugState: "alabama")
+        let state = StateModel(idState: "04000US01", state: "Alabama", idYear: 2022, year: "2022", population: 5028092, slugState: "alabama")
         viewModel.states = [state]
         viewModel.statesSearchBarText = "5028092"
 
@@ -65,7 +65,7 @@ final class StatesVMUnitTests: XCTestCase {
 
     func testFilteredStateListWithSearchTextForState() {
         // Arrange
-        let state = State(idState: "04000US01", state: "Alabama", idYear: 2022, year: "2022", population: 5028092, slugState: "alabama")
+        let state = StateModel(idState: "04000US01", state: "Alabama", idYear: 2022, year: "2022", population: 5028092, slugState: "alabama")
         viewModel.states = [state]
         viewModel.statesSearchBarText = "Alabama"
 
@@ -80,7 +80,7 @@ final class StatesVMUnitTests: XCTestCase {
     func testFetchStateSuccess() async {
         
         // Arrange
-        let stateData = StateData(data: [State(idState: "04000US01", state: "Alabama", idYear: 2022, year: "2022", population: 5028092, slugState: "alabama")])
+        let stateData = StateData(data: [StateModel(idState: "04000US01", state: "Alabama", idYear: 2022, year: "2022", population: 5028092, slugState: "alabama")])
         
         mockAPI.mockData = stateData
         
@@ -138,5 +138,27 @@ final class StatesVMUnitTests: XCTestCase {
 
         await loadingTask.value // Wait for the async task to complete
         await fulfillment(of: [expectation], timeout: 1)
+    }
+    
+    func testRefreshStateData() async {
+        // Arrange
+        let initialStateData = StateData(data: [StateModel(idState: "04000US01", state: "Alabama", idYear: 2022, year: "2022", population: 5028092, slugState: "alabama")])
+        
+        mockAPI.mockData = initialStateData
+        
+        await viewModel.fetchState()
+        
+        // Act
+        let newStateData = StateData(data: [StateModel(idState: "04000US02", state: "Alaska", idYear: 2022, year: "2022", population: 734821, slugState: "alaska")])
+        
+        mockAPI.mockData = newStateData
+        
+        await viewModel.fetchState()
+        
+        // Assert
+        XCTAssertFalse(viewModel.isLoading, "The isLoading state for the states screen should be false after refresh.")
+        XCTAssertEqual(viewModel.states.count, 1, "The states should only have 1 element after refresh.")
+        XCTAssertEqual(viewModel.states.first?.population, 734821, "The population property should match the newly fetched data.")
+        XCTAssertEqual(viewModel.states.first?.state, "Alaska", "The state property should match the newly fetched data.")
     }
 }

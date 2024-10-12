@@ -14,7 +14,7 @@ struct CensusFlowApp: App {
     var body: some Scene {
         
         WindowGroup {
-            Tabs()
+            MainView()
         }
     }
 }

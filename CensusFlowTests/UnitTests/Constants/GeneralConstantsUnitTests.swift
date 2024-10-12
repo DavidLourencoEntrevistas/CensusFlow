@@ -27,7 +27,8 @@ final class GeneralConstantsUnitTests: XCTestCase {
             "2. Use the search function to find specific data.",
             "xmark",
             "🤔",
-            "Something went wrong, try again later."
+            "Something went wrong, try again later.",
+            "AppIconImage"
         ]
         
         // Act
@@ -44,7 +45,8 @@ final class GeneralConstantsUnitTests: XCTestCase {
             GeneralConstants.howToUseTwo,
             GeneralConstants.closeIcon,
             GeneralConstants.errorEmoji,
-            GeneralConstants.errorScreenText
+            GeneralConstants.errorScreenText,
+            GeneralConstants.appIcon
         ]
     
         
@@ -58,7 +60,7 @@ final class GeneralConstantsUnitTests: XCTestCase {
     func testInfoSheetDictStructure() {
         // Arrange
         let expectedKeys = [
-            GeneralConstants.title,
+            GeneralConstants.descriptionTitle,
             GeneralConstants.featuresTitle,
             GeneralConstants.howToUseTitle
         ]
@@ -72,7 +74,7 @@ final class GeneralConstantsUnitTests: XCTestCase {
 
     func testInfoSheetDictValues() {
         // Arrange
-        let expectedValues: [String: [String]] = [GeneralConstants.title: [GeneralConstants.descriptionTitle, GeneralConstants.description], GeneralConstants.featuresTitle: [GeneralConstants.featuresOne, GeneralConstants.featuresTwo, GeneralConstants.featuresThree], GeneralConstants.howToUseTitle: [GeneralConstants.howToUseOne, GeneralConstants.howToUseTwo]]
+        let expectedValues: [String: [String]] = [GeneralConstants.descriptionTitle: [GeneralConstants.description], GeneralConstants.featuresTitle: [GeneralConstants.featuresOne, GeneralConstants.featuresTwo, GeneralConstants.featuresThree], GeneralConstants.howToUseTitle: [GeneralConstants.howToUseOne, GeneralConstants.howToUseTwo]]
 
         // Act
         let actualValues = GeneralConstants.infoSheetDict

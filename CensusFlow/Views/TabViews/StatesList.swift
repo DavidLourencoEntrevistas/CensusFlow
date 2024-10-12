@@ -13,41 +13,41 @@ struct StatesList: View {
     
     var body: some View {
         NavigationStack {
-            if !statesVM.isLoading {
                 Group{
-                    if statesVM.isLoading{
-                        LoadingView()
-                    }else if statesVM.showAlert{
-                        ErrorScreen()
-                    }else{
-                        StatesCustomList()
-                    }
-                    
-                }
-                .navigationTitle(StatesConstants.navigationTitle)
-                .searchable(text: $statesVM.statesSearchBarText)
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button(action: {
-                            // Toggle the info view
-                            statesVM.showInfoView.toggle()
-                        }) {
-                            Image(systemName: StatesConstants.statesInfoIcon)
-                                .font(.headline)
-                                .foregroundColor(Colors.accentIconColor)
+                        if statesVM.isLoading{
+                            LoadingView()
+                        }else if statesVM.showAlert{
+                            List{
+                                ErrorScreen()
+                            }
+                        }else{
+                            StatesCustomList()
                         }
                     }
-                }.sheet(isPresented: $statesVM.showInfoView){
-                    InfoSheet(onClose: {
-                        statesVM.showInfoView = false
-                    })
-                }
-            } else {
-                ProgressView()
-            }
+                    .navigationTitle(StatesConstants.navigationTitle)
+                    .searchable(text: $statesVM.statesSearchBarText)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button(action: {
+                                // Toggle the info view
+                                statesVM.showInfoView.toggle()
+                            }) {
+                                Image(systemName: StatesConstants.statesInfoIcon)
+                                    .font(.headline)
+                                    .foregroundColor(Colors.accentIconColor)
+                            }
+                        }
+                    }
         }
         .task {
             await statesVM.fetchState()
+        }
+        .refreshable {
+            await statesVM.fetchState()
+        }.sheet(isPresented: $statesVM.showInfoView){
+            InfoSheet(onClose: {
+                statesVM.showInfoView = false
+            })
         }
     }
 }

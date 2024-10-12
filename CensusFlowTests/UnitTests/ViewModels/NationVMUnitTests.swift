@@ -142,4 +142,26 @@ final class NationVMUnitTests: XCTestCase {
         await loadingTask.value // Wait for the async task to complete
         await fulfillment(of: [expectation], timeout: 1)
     }
+    
+    func testRefreshNationData() async {
+        // Arrange
+        let initialNationData = NationData(data: [Nation(idNation: "01000US", nation: "United States", idYear: 2022, year: "2022", population: 331097593, slugNation: "united-states")])
+        
+        mockAPI.mockData = initialNationData
+        
+        await viewModel.fetchNation()
+        
+        // Act
+        let newNationData = NationData(data: [Nation(idNation: "01000US", nation: "United States", idYear: 2021, year: "2021", population: 329725481, slugNation: "united-states")])
+        
+        mockAPI.mockData = newNationData
+        
+        await viewModel.fetchNation()
+        
+        // Assert
+        XCTAssertFalse(viewModel.isLoading, "The isLoading state for the nation screen should be false after refresh.")
+        XCTAssertEqual(viewModel.nationList.count, 1, "The nationList should only have 1 element after refresh.")
+        XCTAssertEqual(viewModel.nationList.first?.population, 329725481, "The population property should match the newly fetched data.")
+        XCTAssertEqual(viewModel.nationList.first?.year, "2021", "The year property should match the newly fetched data.")
+    }
 }

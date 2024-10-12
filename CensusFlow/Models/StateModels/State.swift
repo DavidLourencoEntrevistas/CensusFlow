@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct State : Codable {
+// Change name to prevent error with keyword state
+struct StateModel : Codable {
     
     let id: UUID
     let idState : String

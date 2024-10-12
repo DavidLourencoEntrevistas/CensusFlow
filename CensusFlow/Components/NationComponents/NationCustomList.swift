@@ -21,7 +21,3 @@ struct NationCustomList: View {
         }
     }
 }
-
-#Preview {
-    NationCustomList()
-}

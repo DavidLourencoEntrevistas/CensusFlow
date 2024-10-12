@@ -8,13 +8,13 @@
 import Foundation
 
 class StatesViewModel<T: USADataProtocol> : ObservableObject{
-    @Published var states: [State] = []
+    @Published var states: [StateModel] = []
     @Published var statesSearchBarText : String = ""
     @Published var showInfoView : Bool = false
     @Published var isLoading : Bool = false
     @Published var showAlert : Bool = false
     
-    var filteredStateList : [State] {
+    var filteredStateList : [StateModel] {
         if statesSearchBarText.isEmpty{
             return states
         }else{

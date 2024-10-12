@@ -22,10 +22,13 @@ struct GeneralConstants{
     static let howToUseTwo = "2. Use the search function to find specific data."
     
     
-    static let infoSheetDict = [title: [descriptionTitle, description], featuresTitle: [featuresOne, featuresTwo, featuresThree], howToUseTitle: [howToUseOne, howToUseTwo]]
+    
+    static let infoSheetDict = [descriptionTitle: [description], featuresTitle: [featuresOne, featuresTwo, featuresThree], howToUseTitle: [howToUseOne, howToUseTwo]]
     
     static let closeIcon = "xmark"
     static let errorEmoji = "🤔"
     static let errorScreenText = "Something went wrong, try again later."
+    
+    static let appIcon = "AppIconImage"
     
 }

@@ -15,11 +15,10 @@ struct InfoSheet : View {
         NavigationStack{
             VStack(alignment: .leading, spacing: 20) {
                 List {
-                    ForEach(GeneralConstants.infoSheetDict.keys.sorted(by: >), id: \.self) { title in
+                    ForEach(GeneralConstants.infoSheetDict.keys.sorted(by: <), id: \.self) { title in
                         Section(header: Text(title).font(.headline)) {
                             ForEach(GeneralConstants.infoSheetDict[title]!, id: \.self) { content in
                                 Text(content)
-                                    .foregroundColor(.black)
                             }
                         }
                     }

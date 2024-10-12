@@ -13,36 +13,41 @@ struct NationList: View {
     
     var body: some View {
         NavigationStack {
-                Group{
-                    if nationVM.isLoading{
-                        LoadingView()
-                    }else if nationVM.showAlert{
-                        ErrorScreen()
-                    }else{
-                        NationCustomList()	
+                    Group{
+                        if nationVM.isLoading{
+                            LoadingView()
+                        }else if nationVM.showAlert{
+                            ScrollView{
+                                ErrorScreen()
+                            }
+                        }else{
+                            NationCustomList()                            
+                        }
+
                     }
-                    
-                }.navigationTitle(NationConstants.navigationTitle)
-                .searchable(text: $nationVM.nationSearchBarText)
+                    .navigationTitle(NationConstants.navigationTitle)
+                    .searchable(text: $nationVM.nationSearchBarText)
                     .toolbar {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            Button(action: {
-                                // Toggle the info view
-                                nationVM.showInfoView.toggle()
-                            }) {
-                                Image(systemName: StatesConstants.statesInfoIcon)
-                                .font(.headline)
-                                .foregroundColor(Colors.accentIconColor)
+                            ToolbarItem(placement: .topBarTrailing) {
+                                Button(action: {
+                                    // Toggle the info view
+                                    nationVM.showInfoView.toggle()
+                                }) {
+                                    Image(systemName: StatesConstants.statesInfoIcon)
+                                    .font(.headline)
+                                    .foregroundColor(Colors.accentIconColor)
+                                }
                             }
                         }
-                    }.sheet(isPresented: $nationVM.showInfoView){
-                        InfoSheet(onClose: {
-                            nationVM.showInfoView = false
-                        })
-                    }
         }.task {
             await nationVM.fetchNation()
             
+        }.refreshable {
+            await nationVM.fetchNation()
+        }.sheet(isPresented: $nationVM.showInfoView){
+            InfoSheet(onClose: {
+                nationVM.showInfoView = false
+            })
         }
     }
 }
