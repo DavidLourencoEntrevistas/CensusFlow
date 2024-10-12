@@ -7,11 +7,12 @@
 
 import Foundation
 
-class StatesViewModel : ObservableObject{
+class StatesViewModel<T: USADataProtocol> : ObservableObject{
     @Published var states: [State] = []
     @Published var statesSearchBarText : String = ""
     @Published var showInfoView : Bool = false
     @Published var isLoading : Bool = false
+    @Published var showAlert : Bool = false
     
     var filteredStateList : [State] {
         if statesSearchBarText.isEmpty{
@@ -28,26 +29,41 @@ class StatesViewModel : ObservableObject{
         }
     }
     
-    private let USADataAPI : USADataAPI<StateData>
+    private let USADataAPI : T
     
-    init(USADataAPI: USADataAPI<StateData>) {
+    init(USADataAPI: T) {
         self.USADataAPI = USADataAPI
     }
     
+    @MainActor
+    func triggerAlert(){
+            self.isLoading = false
+            self.showAlert = true
+    }
+    
+    @MainActor
+    func triggerLoading(){
+            self.isLoading = true
+    }
+    
+    @MainActor
     func fetchState() async{
         do{
-            DispatchQueue.main.async {
-                self.isLoading = true
+            triggerLoading()
+            
+            guard let stateData = try await USADataAPI.fetchData() as? StateData else{
+                triggerAlert()
+                return
             }
             
-            let stateData = try await USADataAPI.fetchData()
+            self.isLoading = false
+            self.states = stateData.data
             
-            DispatchQueue.main.async{
-                self.isLoading = false
-                self.states = stateData.data
+            if states.isEmpty{
+                triggerAlert()
             }
         }catch{
-            print("Error fetching states.")
+            triggerAlert()
         }
     }
 }

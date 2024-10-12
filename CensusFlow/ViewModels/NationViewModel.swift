@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NationViewModel : ObservableObject{
+class NationViewModel<T: USADataProtocol> : ObservableObject{
     
     @Published var nationList: [Nation] = []
     @Published var nationSearchBarText : String = ""
@@ -15,7 +15,7 @@ class NationViewModel : ObservableObject{
     @Published var isLoading : Bool = false
     @Published var showAlert : Bool = false
     
-    private let USADataAPI : USADataAPI<NationData>
+    private let USADataAPI : T
     
     var filteredNationList : [Nation] {
         if nationSearchBarText.isEmpty{
@@ -31,29 +31,40 @@ class NationViewModel : ObservableObject{
     }
     
     
-    init(USADataAPI: USADataAPI<NationData>) {
+    init(USADataAPI: T) {
         self.USADataAPI = USADataAPI
     }
     
+    @MainActor
+    func triggerAlert(){
+            self.isLoading = false
+            self.showAlert = true
+    }
+    
+    @MainActor
+    func triggerLoading(){
+            self.isLoading = true
+    }
+    
+    @MainActor
     func fetchNation() async{
         do{
-            DispatchQueue.main.async {
-                self.isLoading = true
+            triggerLoading()
+            
+            guard let nationData = try await USADataAPI.fetchData() as? NationData else{
+                triggerAlert()
+                return
             }
             
-            let nationData = try await USADataAPI.fetchData()
+            self.isLoading = false
+            self.nationList = nationData.data
             
-            DispatchQueue.main.async{
-                self.isLoading = false
-                self.nationList = nationData.data
+            if nationList.isEmpty{
+                triggerAlert()
             }
+                    
         }catch{
-            
-            DispatchQueue.main.async{
-                self.isLoading = false
-                self.showAlert = true
-            }
-            print("Error fetching nations: \(error)")
+            triggerAlert()
         }
     }
     

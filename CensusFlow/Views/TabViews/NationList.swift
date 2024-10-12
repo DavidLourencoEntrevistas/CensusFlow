@@ -9,17 +9,19 @@ import SwiftUI
 
 struct NationList: View {
     
-    @EnvironmentObject var nationVM : NationViewModel
+    @EnvironmentObject var nationVM : NationViewModel<USADataAPI<NationData>> 
     
     var body: some View {
         NavigationStack {
-            if !nationVM.isLoading {
-                List(nationVM.filteredNationList, id: \.id){ nation in
-                    Section(content: {
-                        NationRow(populationValue: nation.population)
-                    }, header: {
-                        NationHeader(year: nation.year)
-                    })
+                Group{
+                    if nationVM.isLoading{
+                        LoadingView()
+                    }else if nationVM.showAlert{
+                        ErrorScreen()
+                    }else{
+                        NationCustomList()	
+                    }
+                    
                 }.navigationTitle(NationConstants.navigationTitle)
                 .searchable(text: $nationVM.nationSearchBarText)
                     .toolbar {
@@ -38,9 +40,6 @@ struct NationList: View {
                             nationVM.showInfoView = false
                         })
                     }
-            } else {
-                ProgressView()
-            }
         }.task {
             await nationVM.fetchNation()
             

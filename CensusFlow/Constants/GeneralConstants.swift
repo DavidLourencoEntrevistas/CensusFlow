@@ -20,6 +20,10 @@ struct GeneralConstants{
     static let howToUseTitle = "How to Use:"
     static let howToUseOne = "1. Navigate between tabs to access national and state population data."
     static let howToUseTwo = "2. Use the search function to find specific data."
+    
+    
+    static let infoSheetDict = [title: [descriptionTitle, description], featuresTitle: [featuresOne, featuresTwo, featuresThree], howToUseTitle: [howToUseOne, howToUseTwo]]
+    
     static let closeIcon = "xmark"
     static let errorEmoji = "🤔"
     static let errorScreenText = "Something went wrong, try again later."

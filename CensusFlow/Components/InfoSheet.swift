@@ -14,39 +14,15 @@ struct InfoSheet : View {
     var body: some View {
         NavigationStack{
             VStack(alignment: .leading, spacing: 20) {
-                List{
-                    Section(content: {
-                        Text(GeneralConstants.description)
-                            .font(.body)
-                            .foregroundColor(.black)
-                    }, header: {
-                        Text(GeneralConstants.descriptionTitle)                            .font(.headline)
-                    })
-                    Section(content: {
-                        Text(GeneralConstants.featuresOne)
-                            .foregroundColor(.black)
-                        Text(GeneralConstants.featuresTwo)
-                            .foregroundColor(.black)
-                        Text(GeneralConstants.featuresThree)
-                            .foregroundColor(.black)
-                        
-                    }, header: {
-                        Text(GeneralConstants.featuresTitle)
-                            .font(.headline)
-
-                    })
-                    Section(content: {
-                        
-                        Text(GeneralConstants.howToUseOne)
-                            .foregroundColor(.black)
-                        
-                        Text(GeneralConstants.howToUseTwo)
-                            .foregroundColor(.black)
-                    }, header: {
-                        Text(GeneralConstants.howToUseTitle)
-                            .font(.headline)
-                    })
-                    
+                List {
+                    ForEach(GeneralConstants.infoSheetDict.keys.sorted(by: >), id: \.self) { title in
+                        Section(header: Text(title).font(.headline)) {
+                            ForEach(GeneralConstants.infoSheetDict[title]!, id: \.self) { content in
+                                Text(content)
+                                    .foregroundColor(.black)
+                            }
+                        }
+                    }
                 }
             }.navigationTitle(GeneralConstants.title)
                 .navigationBarTitleDisplayMode(.inline)

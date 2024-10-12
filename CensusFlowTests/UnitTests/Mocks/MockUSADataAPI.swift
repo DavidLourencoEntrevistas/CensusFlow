@@ -14,17 +14,12 @@ class MockUSADataAPI<T: Decodable>: USADataProtocol {
     var mockData: T?
     
     // Mock error
-    var mockError: Error?
     var shouldReturnError : Bool = false
     
     
     func fetchData() async throws -> T {
         if shouldReturnError{
-            if let error = mockError{
-                throw error
-            } else {
-                throw Errors.unknownError
-            }
+            throw Errors.unknownError
         }
         
         guard let data = mockData else{

@@ -54,5 +54,33 @@ final class GeneralConstantsUnitTests: XCTestCase {
         }
         
     }
+    
+    func testInfoSheetDictStructure() {
+        // Arrange
+        let expectedKeys = [
+            GeneralConstants.title,
+            GeneralConstants.featuresTitle,
+            GeneralConstants.howToUseTitle
+        ]
+        
+        // Act
+        let actualKeys = Array(GeneralConstants.infoSheetDict.keys)
+
+        // Assert
+        XCTAssertEqual(Set(actualKeys), Set(expectedKeys), "The keys in infoSheetDict should match the expected keys.")
+    }
+
+    func testInfoSheetDictValues() {
+        // Arrange
+        let expectedValues: [String: [String]] = [GeneralConstants.title: [GeneralConstants.descriptionTitle, GeneralConstants.description], GeneralConstants.featuresTitle: [GeneralConstants.featuresOne, GeneralConstants.featuresTwo, GeneralConstants.featuresThree], GeneralConstants.howToUseTitle: [GeneralConstants.howToUseOne, GeneralConstants.howToUseTwo]]
+
+        // Act
+        let actualValues = GeneralConstants.infoSheetDict
+
+        // Assert
+        for (key, expectedValue) in expectedValues {
+            XCTAssertEqual(actualValues[key], expectedValue, "The values for key \(key) do not match the expected values.")
+        }
+    }
 
 }

@@ -44,6 +44,9 @@
 		12092D7B2CBA053200F30358 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D7A2CBA053200F30358 /* GeneralConstants.swift */; };
 		12092D7D2CBAAC8B00F30358 /* GeneralConstantsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D7C2CBAAC8B00F30358 /* GeneralConstantsUnitTests.swift */; };
 		12092D7F2CBAB8D000F30358 /* ErrorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D7E2CBAB8D000F30358 /* ErrorScreen.swift */; };
+		12092D812CBAC23000F30358 /* NationCustomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D802CBAC23000F30358 /* NationCustomList.swift */; };
+		12092D852CBAC32C00F30358 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D842CBAC32C00F30358 /* LoadingView.swift */; };
+		12092D872CBAC3CB00F30358 /* StatesCustomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D862CBAC3CB00F30358 /* StatesCustomList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		12092D7A2CBA053200F30358 /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		12092D7C2CBAAC8B00F30358 /* GeneralConstantsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstantsUnitTests.swift; sourceTree = "<group>"; };
 		12092D7E2CBAB8D000F30358 /* ErrorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorScreen.swift; sourceTree = "<group>"; };
+		12092D802CBAC23000F30358 /* NationCustomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationCustomList.swift; sourceTree = "<group>"; };
+		12092D842CBAC32C00F30358 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		12092D862CBAC3CB00F30358 /* StatesCustomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesCustomList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,8 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				12092CEE2CB939B100F30358 /* NationConstants.swift */,
-				12092CF02CB939C100F30358 /* StatesConstants.swift */,
 				12092D092CB940F300F30358 /* TabsConstants.swift */,
+				12092CF02CB939C100F30358 /* StatesConstants.swift */,
 				12092D0B2CB941E500F30358 /* Colors.swift */,
 				12092D7A2CBA053200F30358 /* GeneralConstants.swift */,
 			);
@@ -307,6 +313,7 @@
 				12092D692CB9D72400F30358 /* NationComponents */,
 				12092D782CBA04A300F30358 /* InfoSheet.swift */,
 				12092D7E2CBAB8D000F30358 /* ErrorScreen.swift */,
+				12092D842CBAC32C00F30358 /* LoadingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -334,6 +341,7 @@
 			children = (
 				12092D672CB9B13200F30358 /* NationHeader.swift */,
 				12092D652CB9B03B00F30358 /* NationRow.swift */,
+				12092D802CBAC23000F30358 /* NationCustomList.swift */,
 			);
 			path = NationComponents;
 			sourceTree = "<group>";
@@ -343,6 +351,7 @@
 			children = (
 				12092D6B2CB9D73F00F30358 /* StateHeader.swift */,
 				12092D6D2CB9D74700F30358 /* StateRow.swift */,
+				12092D862CBAC3CB00F30358 /* StatesCustomList.swift */,
 			);
 			path = StateComponents;
 			sourceTree = "<group>";
@@ -457,8 +466,11 @@
 				12092D662CB9B03B00F30358 /* NationRow.swift in Sources */,
 				12092D0C2CB941E500F30358 /* Colors.swift in Sources */,
 				12092D792CBA04A300F30358 /* InfoSheet.swift in Sources */,
+				12092D872CBAC3CB00F30358 /* StatesCustomList.swift in Sources */,
 				12092D0A2CB940F300F30358 /* TabsConstants.swift in Sources */,
 				12092CE52CB9393F00F30358 /* StatesList.swift in Sources */,
+				12092D852CBAC32C00F30358 /* LoadingView.swift in Sources */,
+				12092D812CBAC23000F30358 /* NationCustomList.swift in Sources */,
 				12092D682CB9B13200F30358 /* NationHeader.swift in Sources */,
 				12092D6E2CB9D74700F30358 /* StateRow.swift in Sources */,
 				12092D6C2CB9D73F00F30358 /* StateHeader.swift in Sources */,
