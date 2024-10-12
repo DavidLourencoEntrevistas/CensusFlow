@@ -43,6 +43,7 @@
 		12092D792CBA04A300F30358 /* InfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D782CBA04A300F30358 /* InfoSheet.swift */; };
 		12092D7B2CBA053200F30358 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D7A2CBA053200F30358 /* GeneralConstants.swift */; };
 		12092D7D2CBAAC8B00F30358 /* GeneralConstantsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D7C2CBAAC8B00F30358 /* GeneralConstantsUnitTests.swift */; };
+		12092D7F2CBAB8D000F30358 /* ErrorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12092D7E2CBAB8D000F30358 /* ErrorScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		12092D782CBA04A300F30358 /* InfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheet.swift; sourceTree = "<group>"; };
 		12092D7A2CBA053200F30358 /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		12092D7C2CBAAC8B00F30358 /* GeneralConstantsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstantsUnitTests.swift; sourceTree = "<group>"; };
+		12092D7E2CBAB8D000F30358 /* ErrorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 				12092D6A2CB9D72A00F30358 /* StateComponents */,
 				12092D692CB9D72400F30358 /* NationComponents */,
 				12092D782CBA04A300F30358 /* InfoSheet.swift */,
+				12092D7E2CBAB8D000F30358 /* ErrorScreen.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				12092D682CB9B13200F30358 /* NationHeader.swift in Sources */,
 				12092D6E2CB9D74700F30358 /* StateRow.swift in Sources */,
 				12092D6C2CB9D73F00F30358 /* StateHeader.swift in Sources */,
+				12092D7F2CBAB8D000F30358 /* ErrorScreen.swift in Sources */,
 				12092D152CB9533F00F30358 /* USADataAPI.swift in Sources */,
 				12092D642CB9A44400F30358 /* StateData.swift in Sources */,
 				12092CE32CB9391E00F30358 /* Nation.swift in Sources */,

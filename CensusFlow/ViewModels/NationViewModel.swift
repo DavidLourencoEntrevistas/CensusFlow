@@ -13,6 +13,7 @@ class NationViewModel : ObservableObject{
     @Published var nationSearchBarText : String = ""
     @Published var showInfoView : Bool = false
     @Published var isLoading : Bool = false
+    @Published var showAlert : Bool = false
     
     private let USADataAPI : USADataAPI<NationData>
     
@@ -47,6 +48,11 @@ class NationViewModel : ObservableObject{
                 self.nationList = nationData.data
             }
         }catch{
+            
+            DispatchQueue.main.async{
+                self.isLoading = false
+                self.showAlert = true
+            }
             print("Error fetching nations: \(error)")
         }
     }

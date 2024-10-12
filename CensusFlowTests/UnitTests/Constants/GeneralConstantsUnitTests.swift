@@ -24,7 +24,10 @@ final class GeneralConstantsUnitTests: XCTestCase {
             "Search for specific years or states.",
             "How to Use:",
             "1. Navigate between tabs to access national and state population data.",
-            "2. Use the search function to find specific data."
+            "2. Use the search function to find specific data.",
+            "xmark",
+            "🤔",
+            "Something went wrong, try again later."
         ]
         
         // Act
@@ -38,7 +41,10 @@ final class GeneralConstantsUnitTests: XCTestCase {
             GeneralConstants.featuresThree,
             GeneralConstants.howToUseTitle,
             GeneralConstants.howToUseOne,
-            GeneralConstants.howToUseTwo
+            GeneralConstants.howToUseTwo,
+            GeneralConstants.closeIcon,
+            GeneralConstants.errorEmoji,
+            GeneralConstants.errorScreenText
         ]
     
         

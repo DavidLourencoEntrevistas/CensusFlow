@@ -57,7 +57,7 @@ struct InfoSheet : View {
                             onClose()
     
                         }) {
-                            Image(systemName: "xmark")
+                            Image(systemName: GeneralConstants.closeIcon)
                                 .font(.callout)
                             .foregroundColor(Colors.accentIconColor)
                         }

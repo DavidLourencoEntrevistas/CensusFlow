@@ -37,12 +37,13 @@ struct NationList: View {
                         InfoSheet(onClose: {
                             nationVM.showInfoView = false
                         })
-                }
+                    }
             } else {
                 ProgressView()
             }
         }.task {
             await nationVM.fetchNation()
+            
         }
     }
 }
